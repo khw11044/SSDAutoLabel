@@ -1,0 +1,26 @@
+<annotation>
+	<folder>/home/pi/Desktop/AutoLabel2/pj/images</folder>
+	<filename>3.jpg</filename>
+<path>3.jpg</path>
+	<source>
+	/t<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Drone</name>
+		<pose>Unspecified</pose>
+	/t<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>6</xmin>
+			<ymin>53</ymin>
+			<xmax>749</xmax>
+			<ymax>507</ymax>
+		</bndbox>
+	</object>
+</annotation>
