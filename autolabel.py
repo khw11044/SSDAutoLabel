@@ -146,7 +146,7 @@ for image_path in images:
     image_resized = cv2.resize(image_rgb, (width, height))
     input_data = np.expand_dims(image_resized, axis=0)
     
-    filename = image_path.split('/')[-1]
+    filename = image_path.split('\\')[-1]
     filename2 = filename.split('.')[0]
     print('image file name',filename)
     
@@ -195,7 +195,7 @@ for image_path in images:
     if len(num) !=0:
         print(len(num))
         print('success')
-        f = open(successfolder+'/'+filename2+".xml", 'w')
+        f = open(successfolder+'\\'+filename2+".xml", 'w')
         time.sleep(0.1)
         f.write('<annotation>\n\t<folder>'+PATH_TO_IMAGES+'</folder>\n')
         f.write('\t<filename>'+filename+'</filename>\n<path>'+filename2+'.jpg</path>\n')
@@ -214,7 +214,7 @@ for image_path in images:
         time.sleep(0.1)
         f.close
         time.sleep(0.05)
-        shutil.move(PATH_TO_IMAGES+'/'+filename, successfolder+'/'+filename)
+        shutil.move(PATH_TO_IMAGES+'\\'+filename, successfolder+'\\'+filename)
         time.sleep(0.1)
         print('createXML')
     # All the results have been drawn on the image, now display the image
@@ -226,10 +226,10 @@ for image_path in images:
     
     if cv2.waitKey(0) == ord('d'):
         print('delete')
-        os.remove(successfolder+'/'+filename2+".xml")
+        os.rmdir(successfolder+'\\'+filename2+".xml")
         time.sleep(0.1)
         print("fail")
-        shutil.move(successfolder+'/'+filename, failimages+'/'+filename)
+        shutil.move(successfolder+'\\'+filename, failimages+'\\'+filename)
         time.sleep(0.1)
         print("----------------------------sendtofailfoder------------------------------")
         cv2.destroyAllWindows()
